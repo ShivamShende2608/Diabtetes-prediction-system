@@ -3,48 +3,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-    <
-    <style type =text/css>
-    div{
-        color:white;
-    }
-    h1{
-        color:white;
-        font-family:arial, sans-serif;
-        font-size:60px;
-        font-weight:bold;
-        margin-top:200px;
-    }
-    h2{
-        color:white;
-        font-family:arial,sans-serif;
-        font-size:15px;
-        font-weight:bold;
-        margin-top:400px;
-        
-    }
-    body{
-        background-color: rgb(0, 0, 33);
-    }
-    input[type=submit]{
-        background-color: #4dc3ff;
-        border:2px;
-        color:white;
-        padding: 16px 32px;
-        cursor:pointer;
-        margin-top:15px;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style type="text/css">
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background Styling */
+        body {
+            background-color: #0a1128;
+            background-image: radial-gradient(circle, #001f54, #0a1128);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        /* Central Container */
+        .container {
+            text-align: center;
+            background: #112240;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid #1f4068;
+            max-width: 600px;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #00d4ff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0px 4px 10px rgba(0, 212, 255, 0.5);
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #d0e9ff;
+        }
+
+        /* Button Styling */
+        input[type="submit"] {
+            background: linear-gradient(90deg, #00d4ff, #1f77d0);
+            border: none;
+            color: #ffffff;
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 212, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 25px rgba(0, 212, 255, 0.7);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(2px);
+            box-shadow: 0px 4px 10px rgba(0, 212, 255, 0.3);
+        }
     </style>
 </head>
 <body>
-<div align ='center'>
-    <h1>
-        WELCOME TO DIABETES PREDICTION SYSTEM
-    </h1>
-    <form action="predict">
-          <input type="submit" value="Lets get started">
-    </form>
-</div>
+    <div class="container">
+        <h1>Diabetes Prediction System</h1>
+        <h2>Take the first step towards smarter and healthier living.</h2>
+        <form action="predict">
+            <input type="submit" value="Get Started">
+        </form>
+    </div>
 </body>
 </html>
