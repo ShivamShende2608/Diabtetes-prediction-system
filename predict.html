@@ -3,78 +3,160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prediction page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
     <style>
-        body{
-            background-color: rgba(0, 0, 28, 0.97);
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .main{
-            position: fixed;
-            top: 140px;
-            left: 410px;
-            width: 550px;
-            background-color: rgb(3, 191, 251);
-            border-radius: 10px;
+
+        /* Background Styling */
+        body {
+            background-color: #0a1128;
+            background-image: radial-gradient(circle, #001f54, #0a1128);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 5%;
-        }
-        h1{
             color: #ffffff;
-            font-size: 30px;
+        }
+
+        /* Main Container */
+        .main {
+            width: 600px;
+            background: #112240;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid #1f4068;
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            color: #00d4ff;
+            font-size: 28px;
             font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0px 4px 10px rgba(0, 212, 255, 0.5);
         }
-        input[type=submit]{
-            background-color: #000022;
-            border: 2px;
+
+        /* Form Table Styling */
+        table {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        td {
+            font-size: 16px;
+            padding: 10px;
+            color: #cfcfcf;
+        }
+
+        td input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background: #1a2a47;
             color: #ffffff;
-            padding: 8px 16px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        td input[type="text"]::placeholder {
+            color: #9fb6cf;
+        }
+
+        /* Button Styling */
+        input[type="submit"] {
+            background: linear-gradient(90deg, #00d4ff, #1f77d0);
+            border: none;
+            color: #ffffff;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 30px;
             cursor: pointer;
-            margin-top: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 212, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 25px rgba(0, 212, 255, 0.7);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(2px);
+            box-shadow: 0px 4px 10px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Welcome Text */
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #9fb6cf;
+            text-align: center;
+        }
+
+        /* Result Display */
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff9e42;
         }
     </style>
 </head>
 <body>
-<p>Welcome to Prediction page </p>
-<div align = 'center' class="main">
-    <h1>Please enter the following information:</h1>
-    <form action="result">
-        <table>
-            <tr>
-                <td align="right">Pregnancies:</td>
-                <td align="left"><input type="text" name="n1"></td>
-            </tr>
-             <tr>
-                <td align="right">Glucose:</td>
-                <td align="left"><input type="text" name="n2"></td>
-            </tr>
-             <tr>
-                <td align="right">BloodPressure:</td>
-                <td align="left"><input type="text" name="n3"></td>
-            </tr>
-             <tr>
-                <td align="right">Skin Thickness:</td>
-                <td align="left"><input type="text" name="n4"></td>
-            </tr>
-             <tr>
-                <td align="right">Insulin:</td>
-                <td align="left"><input type="text" name="n5"></td>
-            </tr>
-             <tr>
-                <td align="right">BMI:</td>
-                <td align="left"><input type="text" name="n6"></td>
-            </tr>
-             <tr>
-                <td align="right">Diabetes Pedigree Function:</td>
-                <td align="left"><input type="text" name="n7"></td>
-            </tr>
-             <tr>
-                <td align="right">Age:</td>
-                <td align="left"><input type="text" name="n8"></td>
-            </tr>
-        </table>
-        <input type="submit">
-    </form>
-    Result:{{ result2 }}
-</div>
+    <div class="main">
+        <h1>Please Enter the Following Information:</h1>
+        <form action="result">
+            <table>
+                <tr>
+                    <td align="right">Pregnancies:</td>
+                    <td align="left"><input type="text" name="n1" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">Glucose:</td>
+                    <td align="left"><input type="text" name="n2" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">Blood Pressure:</td>
+                    <td align="left"><input type="text" name="n3" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">Skin Thickness:</td>
+                    <td align="left"><input type="text" name="n4" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">Insulin:</td>
+                    <td align="left"><input type="text" name="n5" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">BMI:</td>
+                    <td align="left"><input type="text" name="n6" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">Diabetes Pedigree Function:</td>
+                    <td align="left"><input type="text" name="n7" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td align="right">Age:</td>
+                    <td align="left"><input type="text" name="n8" placeholder="Enter value"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="result">
+            Result: {{ result2 }}
+        </div>
+    </div>
 </body>
 </html>
