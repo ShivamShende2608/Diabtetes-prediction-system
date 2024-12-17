@@ -28,11 +28,17 @@ This is a Diabetes Prediction System built using Django and Python that predicts
 2. The backend processes the input using a trained machine learning model.
 3. The system predicts the likelihood of diabetes and displays the result as either positive or negative.
 
+## Video
+
+https://github.com/user-attachments/assets/724562ed-f80a-4d03-b0bc-5a627db435ae
+
+
 ## Screenshots
 
 
+![WhatsApp Image 2024-12-13 at 16 19 51_d444d64f](https://github.com/user-attachments/assets/f5b413d2-74c8-4c77-8b18-21eefeea5c65)
 
-
+![WhatsApp Image 2024-12-13 at 11 27 40_d4e62550](https://github.com/user-attachments/assets/3bb42b79-cfd0-4178-bd7c-1fc075a4c880)
 
 
 
